@@ -7,7 +7,7 @@ cascade_file="cascade.xml"
 with picamera.PiCamera() as camera:
   with picamera.array.PiRGBAarray(camera) as stream:
     camera.resolution=(320,240)
-    While True:
+    while True:
       camera.capture(stream,'bgr',use_video_port=True)
       cascade=cv2.CascadeClassifier(cascadefilename)
      if cascade.empty():
