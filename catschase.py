@@ -20,7 +20,6 @@ with picamera.PiCamera() as camera:
         
     if cv2.waitkey(1)&0xFF==ord("q"):
       break
-          
     stream.seek(0)
     stream.truncate()
 cv2.destroyALLWindows()
