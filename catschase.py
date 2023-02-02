@@ -11,10 +11,7 @@ with picamera.PiCamera() as camera:
       camera.capture(stream,'bgr',use_video_port=True)
       gray = cv2.cvtColor(stream.array, cv2.COLOR_BGR2GRAY)
       cascade=cv2.CascadeClassifier(cascadefilename)
-#     if cascade.empty():
-#        print('cannot load cascade file')
-#       sys.exit(-1)
-     objects=cascade.detectMultiScale(gray, minSize=(100, 100)
+      objects=cascade.detectMultiScale(gray, minsize=(100,100))
     
      for(x,y,w,h) in objects:
         print(x,y,w,h) 
