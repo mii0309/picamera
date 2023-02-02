@@ -12,8 +12,7 @@ with picamera.PiCamera() as camera:
       gray = cv2.cvtColor(stream.array, cv2.COLOR_BGR2GRAY)
       cascade=cv2.CascadeClassifier(cascadefilename)
       objects=cascade.detectMultiScale(gray, minsize=(100,100))
-    
-    　for(x,y,w,h) in objects:
+      for(x,y,w,h) in objects:
         print(x,y,w,h) 
         cv2.rectangle(stream.array, (x, y), (x+w, y+h), (0,0,255),5)
         cv2.imshow('frame',stream.array)
