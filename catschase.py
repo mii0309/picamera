@@ -14,7 +14,7 @@ with picamera.PiCamera() as camera:
 #     if cascade.empty():
 #        print('cannot load cascade file')
 #       sys.exit(-1)
-     objects=cascade.detectMultiScale(gray, minSize=(100, 100))
+     objects=cascade.detectMultiScale(gray, minSize=(100, 100)
     
      for(x,y,w,h) in objects:
         print(x,y,w,h) 
