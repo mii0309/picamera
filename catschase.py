@@ -10,9 +10,9 @@ with picamera.PiCamera() as camera:
     while True:
       camera.capture(stream,'bgr',use_video_port=True)
       cascade=cv2.CascadeClassifier(cascadefilename)
-     if cascade.empty():
-        print('cannot load cascade file')
-        sys.exit(-1)
+#     if cascade.empty():
+#        print('cannot load cascade file')
+#       sys.exit(-1)
      objects=cascade.detectMultiScale(srcimg,1.1,3)
     
      for(x,y,w,h) in objects:
