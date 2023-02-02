@@ -13,13 +13,13 @@ with picamera.PiCamera() as camera:
       cascade=cv2.CascadeClassifier(cascadefilename)
       objects=cascade.detectMultiScale(gray, minsize=(100,100))
     
-    for(x,y,w,h) in objects:
+    　for(x,y,w,h) in objects:
         print(x,y,w,h) 
         cv2.rectangle(stream.array, (x, y), (x+w, y+h), (0,0,255),5)
-    cv2.imshow('frame',stream.array)
+        cv2.imshow('frame',stream.array)
         
-    if cv2.waitkey(1)&0xFF==ord("q"):
-    break
-  stream.seek(0)
-  stream.truncate()
-cv2.destroyALLWindows()
+      if cv2.waitkey(1)&0xFF==ord("q"):
+        break
+    stream.seek(0)
+    stream.truncate()
+    cv2.destroyALLWindows()
