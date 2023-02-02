@@ -19,7 +19,7 @@ with picamera.PiCamera() as camera:
     cv2.imshow('frame',stream.array)
         
     if cv2.waitkey(1)&0xFF==ord("q"):
-      break
+   break
     stream.seek(0)
     stream.truncate()
     cv2.destroyALLWindows()
