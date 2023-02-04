@@ -1,6 +1,7 @@
 import cv2  
 import picamera.array
 import picamera
+import numpy as np
 
 cascade_file="cascade.xml"
 with picamera.PiCamera() as camera:
