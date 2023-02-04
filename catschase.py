@@ -10,7 +10,7 @@ with picamera.PiCamera() as camera:
       camera.capture(stream,'bgr',use_video_port=True)
       gray = cv2.cvtColor(stream.array, cv2.COLOR_BGR2GRAY)
       cascade=cv2.CascadeClassifier(cascade_file)
-      objects=cascade.detectMultiScale(gray, minsize=(100,100))
+      objects=cascade.detectMultiScale(gray, minSize=(100,100))
       for(x,y,w,h) in objects:
         print(x,y,w,h) 
         cv2.rectangle(stream.array, (x, y), (x+w, y+h), (0,0,255),5)
