@@ -17,7 +17,7 @@ with picamera.PiCamera() as camera:
         cv2.rectangle(stream.array, (x, y), (x+w, y+h), (0,0,255),5)
         cv2.imshow('frame',stream.array)
         
-      if cv2.waitkey(1)&0xFF==ord("q"):
+      if cv2.waitKey(1)&0xFF==ord("q"):
         break
     stream.seek(0)
     stream.truncate()
